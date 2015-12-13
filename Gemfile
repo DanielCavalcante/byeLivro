@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.2'
 
 gem 'rails', '4.2.3'
 gem 'pg'
@@ -11,6 +12,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem "paperclip", "~> 4.3"
+gem 'elasticsearch-rails'
+gem 'elasticsearch-model'
 
 group :development, :test do
   gem 'pry-meta'

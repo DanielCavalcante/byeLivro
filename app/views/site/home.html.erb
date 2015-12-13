@@ -1,4 +1,8 @@
-<div class="form-horizontal">
-  <div class="col-md-12">
-  </div>
+<div style="text-align: center;">
+  <%= form_tag books_path, class: 'navbar-form navbar-center', role: 'search', method: :get do |f| %>
+    <div class="form-group">
+      <%= text_field_tag :q, params[:q], class: 'form-control' %>
+    </div>
+    <%= button_tag "Search", class: 'btn btn-primary', name: nil %>
+  <% end %>
 </div>
