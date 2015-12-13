@@ -1,0 +1,21 @@
+<div class="form-horizontal">
+  <%= link_to 'Novo livro', new_book_path, class: 'btn btn-link' %>
+  <div class="row">
+    <% @books.each do |book| %>
+      <div class="col-md-4 col-md-3">
+        <div class="thumbnail">
+          <%= image_tag book.avatar.url(:thumb) %>
+          <div class="caption">
+            <h4><%= book.title %></h4>
+            <p>Autor: <%= book.author %></p>
+            <p>ISBN: <%= book.isbn %>
+            <p style="text-align: center;">
+              <%= link_to 'Remover', book_path(book), method: :delete, class:"btn btn-danger" %>
+              <%= link_to 'Editar', edit_book_path(book), class:"btn btn-primary" %>
+            </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<div>

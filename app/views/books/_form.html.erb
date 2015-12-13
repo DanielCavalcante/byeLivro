@@ -1,0 +1,32 @@
+<%= form_for @book, method: 'post', html: { multipart: true, class: 'form-horizontal' } do |f| %>
+  <div class="col-md-4">
+    <div class="form-group">
+      <%= f.file_field :avatar %>
+    </div>
+
+  	<div class="form-group">
+  		<%= f.label :title, 'Título' %>
+  		<%= f.text_field :title, autofocus: true, class:"form-control" %>
+  	</div>
+
+  	<div class="form-group">
+  		<%= f.label :author, 'Autor' %>
+  		<%= f.text_field :author, class:"form-control" %>
+  	</div>
+
+  	<div class="form-group">
+  		<%= f.label :isbn, 'ISBN' %>
+  		<%= f.text_field :isbn, class:"form-control" %>
+  	</div>
+
+  	<div class="form-group">
+  		<%= f.label :description, 'Descrição do livro' %>
+  		<%= f.text_area :description, class:"form-control" %>
+  	</div>
+
+  	<div class="form-group">
+  		<%= f.submit 'Cadastrar', class:'btn btn-success' %>
+      <%= link_to 'Voltar', books_path, class:'btn btn-link' %>
+  	</div>
+  </div>
+<% end %>

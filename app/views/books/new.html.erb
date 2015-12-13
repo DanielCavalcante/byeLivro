@@ -1,0 +1,6 @@
+<h2><%= 'Cadastrar novo livro' %></h2>
+<div>
+	<%= 'Preencha os campos para salvar seu livro.' %>
+</div>
+
+<%= render 'form', book: @book, url: new_book_path(@book) %>

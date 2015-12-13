@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ByeLivro</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+    <% if user_signed_in? && controller_name != 'books' %>
+      <div class="pull-left">
+        <%= link_to 'Meus livros', books_path, class: 'btn btn-link' %>
+      </div>
+    <% end %>
+    <div class="pull-right">
+      <% if not user_signed_in? %>
+        <%= link_to 'Sign in', user_session_path, class: 'btn btn-link' %>
+        <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-link' %>
+      <% end %>
+      <% if user_signed_in? %>
+        <%= link_to 'Sign out', destroy_user_session_path, class: 'btn btn-link' %>
+      <% end %>
+    </div>
+    <%= yield %>
+  </div>
+</body>
+</html>

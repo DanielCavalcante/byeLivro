@@ -1,0 +1,6 @@
+<h2><%= 'Atualizar seu livro' %></h2>
+<div>
+	<%= 'Preencha os campos para atualizar as informações do seu livro.' %>
+</div>
+
+<%= render 'form', book: @book, url: edit_book_path(@book) %>
