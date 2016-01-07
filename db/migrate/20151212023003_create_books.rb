@@ -6,7 +6,6 @@ class CreateBooks < ActiveRecord::Migration
       t.string :isbn
       t.text :description
       t.belongs_to :user, index: true, foreign_key: true, null: false
-      t.attachment :avatar
 
       t.timestamps null: false
     end

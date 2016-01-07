@@ -44,12 +44,24 @@ class BooksController < ApplicationController
     redirect_to books_path, notice: 'Livro removido!'
   end
 
+  def picture_url
+    @book.picture_url
+  end
+
+  def thumb_url
+    @book.picture.thumb.url
+  end
+
+  def has_picture?
+    @book.picture?
+  end
+
   private
 
   def book_params
     params
     .require(:book)
-    .permit(:title, :author, :isbn, :description, :avatar)
+    .permit(:title, :author, :isbn, :description, :picture)
   end
 
 end
