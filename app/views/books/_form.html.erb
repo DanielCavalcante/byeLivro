@@ -1,19 +1,22 @@
 <%= form_for @book, html: { multipart: true, class: 'form-horizontal' } do |f| %>
-  <% if not @article.nil? and @article.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@article.errors.count, "error") %>
-      prohibited this article from being saved:
-    </h2>
-    <ul>
-      <% @article.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+  <% if not @book.nil? and @book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@book.errors.count, "error") %>
+        Erro ao salvar livro:
+      </h2>
+      <ul>
+        <% @book.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="col-md-4">
     <div class="form-group">
       <%= f.file_field :picture %>
+      <% if f.object.picture? %>
+        <%= image_tag f.object.picture.thumb.url %>
+      <% end %>
     </div>
 
   	<div class="form-group">

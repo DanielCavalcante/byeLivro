@@ -10,21 +10,17 @@
 </head>
 <body>
   <div class="container">
-    <% if user_signed_in? && controller_name != 'books' %>
-      <div class="pull-left">
-        <%= link_to 'Meus livros', books_path, class: 'btn btn-link' %>
+    <div class="col-md-12">
+      <div class="row">
+        <%= render 'layouts/nav' %>
       </div>
-    <% end %>
-    <div class="pull-right">
-      <% if not user_signed_in? %>
-        <%= link_to 'Sign in', user_session_path, class: 'btn btn-link' %>
-        <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-link' %>
-      <% end %>
-      <% if user_signed_in? %>
-        <%= link_to 'Sign out', destroy_user_session_path, class: 'btn btn-link' %>
-      <% end %>
+      <div class="row">
+        <%= render 'layouts/search' %>
+      </div>
+      <div class="row">
+        <%= yield %>
+      </div>
     </div>
-    <%= yield %>
   </div>
 </body>
 </html>

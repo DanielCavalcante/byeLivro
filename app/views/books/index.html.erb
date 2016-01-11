@@ -1,10 +1,17 @@
-<div class="form-horizontal">
+<div class="col-md-12">
+  <% if !flash[:notice].blank? %>
+    <div class="col-md-4">
+      <div class="alert alert-info">
+        <%= flash[:notice] %>
+      </div>
+    </div>
+  <% end %>
   <%= link_to 'Novo livro', new_book_path, class: 'btn btn-link' %>
   <div class="row">
     <% @books.each do |book| %>
       <div class="col-md-4 col-md-3">
         <div class="thumbnail">
-          <%= image_tag book.avatar.url(:thumb) %>
+          <%= image_tag book.picture.thumb.url %>
           <div class="caption">
             <h4><%= book.title %></h4>
             <p>Autor: <%= book.author %></p>

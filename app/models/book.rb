@@ -6,6 +6,7 @@ class Book < ActiveRecord::Base
 
   belongs_to :user
   mount_uploader :picture, PictureUploader
+  validates_presence_of :title, :author, :user
 
 end
 Book.import
