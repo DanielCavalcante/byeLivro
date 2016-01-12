@@ -1,10 +1,8 @@
 <% if current_page?(root_path) %>
-  <div style="text-align: center;">
-    <%= form_tag books_path, role: 'search', method: :get do |f| %>
-      <div class="form-inline">
-        <%= text_field_tag :q, params[:q], class: 'form-control' %>
-        <%= button_tag "Search", class: 'btn btn-primary', name: nil %>
-      </div>
-    <% end %>
-  </div>
+  <%= form_tag books_path, role: 'search', method: :get do |f| %>
+    <div class="form-inline">
+      <%= text_field_tag :q, params[:q], class: 'form-control' %>
+      <%= button_tag "Search", class: 'btn btn-primary', name: nil %>
+    </div>
+  <% end %>
 <% end %>
