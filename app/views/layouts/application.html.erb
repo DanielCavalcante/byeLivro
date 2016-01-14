@@ -9,20 +9,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-    <div class="col-md-12">
-      <nav class="row">
-        <%= render 'layouts/nav' %>
-      </nav>
-      <div class="row">
-        <div class="col-md-3 centered">
-          <%= render 'layouts/search' %>
+  <section>
+    <div class="container">
+      <div class="col-md-12">
+        <header style="margin-top: -20px;">
+          <nav class="row">
+            <%= render 'layouts/nav' %>
+          </nav>
+          <div class="row">
+            <div class="col-md-4 centered">
+              <%= render 'layouts/search' %>
+            </div>
+          </div>
+        </header>
+        <div class="row">
+          <%= yield %>
         </div>
       </div>
-      <div class="row">
-        <%= yield %>
-      </div>
     </div>
-  </div>
+  </section>
 </body>
 </html>

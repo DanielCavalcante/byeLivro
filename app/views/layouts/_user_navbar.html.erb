@@ -1,2 +1,11 @@
 <%= link_to 'Meus livros', books_path, class: 'btn btn-link' %>
-<%= link_to 'Sign out', destroy_user_session_path, class: 'btn btn-link' %>
+<div class="pull-right">
+  <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <%= current_user.email %> <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><%= link_to 'Sign out', destroy_user_session_path, class: 'btn btn-link' %></li>
+    </ul>
+  </div>
+</div>

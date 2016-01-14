@@ -13,7 +13,6 @@
     <div class="footer-signin">
       <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
         <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
-        <%= link_to 'Sign up', new_user_registration_path %>
       <% end -%>
     </div>
   </div>

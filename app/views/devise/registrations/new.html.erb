@@ -4,7 +4,7 @@
     <h2>Sign up</h2>
     <div class="form-group">
       <%= f.label :email %>
-      <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+      <%= f.email_field :email, class: 'form-control' %>
     </div>
 
     <div class="form-group">
@@ -28,6 +28,5 @@
         <%= render "devise/shared/links" %>
       </div>
     </div>
-
   </div>
 <% end %>
