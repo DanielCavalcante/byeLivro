@@ -1,2 +1,5 @@
 pt:
-  hello: "Hello world"
+  flash:
+    user:
+      create:
+        notice: 'Cadastro realizado com sucesso!'
