@@ -4,29 +4,11 @@
   <title>ByeLivro</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <section>
-    <div class="container">
-      <div class="col-md-12">
-        <header style="margin-top: -20px;">
-          <nav class="row">
-            <%= render 'layouts/nav' %>
-          </nav>
-          <div class="row">
-            <div class="col-md-4 centered">
-              <%= render 'layouts/search' %>
-            </div>
-          </div>
-        </header>
-        <div class="row">
-          <%= yield %>
-        </div>
-      </div>
-    </div>
-  </section>
+  <%= render 'layouts/nav' %>
+  <%= render 'layouts/search' %>
+  <%= yield %>
 </body>
 </html>

@@ -1,6 +1,4 @@
 <% if not current_page?(:controller => 'users/sessions', :action => 'new') %>
-  <div class="pull-right">
-    <%= link_to 'Sign in', user_session_path, class: 'btn btn-link' %>
-    <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-link' %>
-  <div>
+  <%= link_to 'Sign in', user_session_path %>
+  <%= link_to 'Sign up', new_user_registration_path %>
 <% end %>

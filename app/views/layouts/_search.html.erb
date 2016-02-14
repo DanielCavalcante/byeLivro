@@ -1,9 +1,12 @@
 <% if current_page?(root_path) %>
   <%= form_tag books_path, role: 'search', method: :get do |f| %>
-    <div class="input-group" style="margin-top: 20px;">
-      <%= text_field_tag :q, params[:q], class: 'form-control', placeholder: 'Pesquisar por...' %>
-      <span class="input-group-btn">
-        <%= button_tag "Pesquisar", class: 'btn btn-primary', name: nil %>
+    <div class="center item">
+      <div class="ui icon input">
+        <%= text_field_tag :q, params[:q], placeholder: 'Pesquisar por...' %>
+        <i class="search icon"></i>
+      </div>
+      <span>
+        <%= button_tag "Pesquisar", class: 'ui secondary button', name: nil %>
       </span>
     </div>
   <% end %>

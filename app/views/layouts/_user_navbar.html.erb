@@ -1,11 +1,5 @@
 <%= link_to 'Meus livros', books_path, class: 'btn btn-link' %>
 <%= image_tag current_user.picture.thumb.url, class: 'img-circle', size: "40x40", style: 'margin-left: 50px;' %>
-<div class="btn-group" style="margin-left: -10px;">
-  <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <%= current_user.full_name %> <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu">
-    <li><%= link_to 'Profile', edit_user_registration_path, class: 'btn btn-link' %></li>
-    <li><%= link_to 'Sign out', destroy_user_session_path, class: 'btn btn-link' %></li>
-  </ul>
-</div>
+<%= current_user.full_name %> <span class="caret"></span>
+<li><%= link_to 'Profile', edit_user_registration_path %></li>
+<li><%= link_to 'Sign out', destroy_user_session_path %></li>

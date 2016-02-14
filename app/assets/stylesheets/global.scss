@@ -1,0 +1,22 @@
+.center {
+  margin: 0 auto !important;
+  text-align: center;
+}
+
+.vertical-centered {
+  display: flex !important;
+  align-items: center !important;
+  //flex-direction: column;
+}
+.left {
+  text-align: left !important;
+}
+.right {
+  text-align: right;
+
+  &.computer.only {
+    @media only screen and (max-width: 767px) {
+      text-align: inherit;
+    }
+  }
+}
