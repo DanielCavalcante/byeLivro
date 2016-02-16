@@ -3,9 +3,10 @@
     <h2 class="ui teal image header">
       <div class="content">Sign up</div>
     </h2>
-    <form class="ui large form">
+    <div class="ui large form">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <div class="ui stacked segment">
+          <%= devise_error_messages! %>
           <div class="field">
             <div class="ui left icon input">
               <i class="user icon"></i>
@@ -34,7 +35,7 @@
         </div>
         <div class="ui error message"></div>
       <% end %>
-    </form>
+    </div>
     <div class="ui message">
       <%= render "devise/shared/links" %>
     </div>

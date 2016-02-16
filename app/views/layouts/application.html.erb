@@ -9,6 +9,9 @@
 <body>
   <%= render 'layouts/nav' %>
   <%= render 'layouts/search' %>
+  <% if !flash[:notice].blank? %>
+    <%= flash[:notice] %>
+  <% end %>
   <%= yield %>
 </body>
 </html>
