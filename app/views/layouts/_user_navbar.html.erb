@@ -1,5 +1,5 @@
-<%= link_to 'Meus livros', books_path, class: 'btn btn-link' %>
-<%= image_tag current_user.picture.thumb.url, class: 'img-circle', size: "40x40", style: 'margin-left: 50px;' %>
-<%= current_user.full_name %> <span class="caret"></span>
-<li><%= link_to 'Profile', edit_user_registration_path %></li>
-<li><%= link_to 'Sign out', destroy_user_session_path %></li>
+<%= link_to 'Livros', books_path %>
+<%= image_tag current_user.picture.thumb.url, class: 'ui avatar image' %>
+<%= current_user.full_name %>
+<%= link_to 'Profile', edit_user_registration_path %>
+<%= link_to 'Sign out', destroy_user_session_path %>

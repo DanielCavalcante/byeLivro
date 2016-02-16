@@ -1,57 +1,70 @@
-<div class="col-md-6 centered">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= devise_error_messages! %>
-    <div class="form-group">
-      <%= f.file_field :picture %>
-      <% if f.object.picture? %>
-        <%= image_tag f.object.picture.thumb.url, class: 'img-circle' %>
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui teal image header">
+      <div class="content">Edit <%= resource_name.to_s.humanize %></div>
+    </h2>
+    <div class="ui large form">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <div class="ui stacked segment">
+          <div class="field">
+            <%= f.file_field :picture %>
+            <% if f.object.picture? %>
+              <%= image_tag f.object.picture.thumb.url, class: 'ui rounded tiny image' %>
+            <% end %>
+          </div>
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="user icon"></i>
+              <%= f.text_field :full_name, placeholder: 'Full Name',
+                autofocus: true %>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="envelope icon"></i>
+              <%= f.email_field :email, placeholder: 'E-mail address' %>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="lock icon"></i>
+              <% if devise_mapping.confirmable? &&
+                resource.pending_reconfirmation? %>
+                <div>Currently waiting confirmation for:
+                  <%= resource.unconfirmed_email %>
+                </div>
+              <% end %>
+              <%= f.password_field :password,
+                placeholder: 'Password (6 characters minimum)',
+                autocomplete: "off" %>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="lock icon"></i>
+              <%= f.password_field :password_confirmation,
+                placeholder: 'Confirmation (6 characters minimum)',
+                autocomplete: "off" %>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="lock icon"></i>
+              <%= f.password_field :current_password, autocomplete: "off" %>
+            </div>
+          </div>
+          <%= f.submit "Update", class: 'ui fluid large teal submit button' %>
+        </div>
+        <div class="ui error message">
+          <%= devise_error_messages! %>
+        </div>
       <% end %>
     </div>
-    <div class="form-group">
-      <%= f.label :full_name %><br />
-      <%= f.text_field :full_name, autofocus: true, class: 'form-control' %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, class: 'form-control' %>
-    </div>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-    <% end %>
-
-    <div class="form-group">
-      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-      <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
-    </div>
-
-    <div class="col-md-6">
-      <%= f.submit "Update", class: 'btn btn-success btn-block' %>
-    </div>
-    <div class="col-md-6">
-      <div class="btn btn-link btn-block">
-        <%= link_to "Back", root_path %>
-      </div>
-    </div>
-  <% end %>
-
-  <div class="form-group">
-    <div class="col-md-12">
+    <div class="ui message">
       <h3>Cancel my account</h3>
-      <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %>
+      <%= button_to "Cancel my account", registration_path(resource_name),
+        data: { confirm: "Are you sure?" }, method: :delete,
+        class: 'ui fluid large red submit button' %>
     </div>
   </div>
 </div>
