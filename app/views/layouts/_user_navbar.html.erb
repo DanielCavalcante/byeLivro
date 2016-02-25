@@ -1,5 +1,9 @@
-<%= link_to 'Livros', books_path %>
-<%= image_tag current_user.picture.thumb.url, class: 'ui avatar image' %>
-<%= current_user.full_name %>
-<%= link_to 'Profile', edit_user_registration_path %>
-<%= link_to 'Sign out', destroy_user_session_path %>
+<div class="ui menu">
+  <%= link_to 'ByeLivro', root_path, class: 'header item' %>
+  <%= link_to 'Books', books_path, class: 'item' %>
+  <div class="right menu">
+    <%= render 'layouts/search' %>
+    <%= link_to 'Profile', edit_user_registration_path, class: 'item' %>
+    <%= link_to 'Sign out', destroy_user_session_path, class: 'item' %>
+  </div>
+</div>

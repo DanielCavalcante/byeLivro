@@ -1,10 +1,3 @@
-<%= link_to root_path do %>
-  <%= image_tag 'byeLivro.png', size: "200x60" %>
-<% end %>
-<%= link_to 'Página inicial', root_path %>
-<%= link_to 'About', about_path %>
-<%= link_to 'Como funciona?' %>
-<%= link_to 'Contato' %>
 <% if user_signed_in? %>
   <%= render 'layouts/user_navbar' %>
 <% end %>

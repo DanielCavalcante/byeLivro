@@ -1,4 +1,11 @@
 <% if not current_page?(:controller => 'users/sessions', :action => 'new') %>
+  <%= link_to root_path do %>
+    <%= image_tag 'byeLivro.png', size: "200x60" %>
+  <% end %>
+  <%= link_to 'Página inicial', root_path %>
+  <%= link_to 'About', about_path %>
+  <%= link_to 'Como funciona?' %>
+  <%= link_to 'Contato' %>
   <%= link_to 'Sign in', user_session_path %>
   <%= link_to 'Sign up', new_user_registration_path %>
 <% end %>
