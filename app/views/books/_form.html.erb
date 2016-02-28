@@ -1,49 +1,42 @@
-<%= form_for @book, html: { multipart: true, class: 'form-horizontal' } do |f| %>
-  <% if not @book.nil? and @book.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@book.errors.count, "error") %>
-        Erro ao salvar livro:
-      </h2>
-      <ul>
-        <% @book.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+<div class="ui middle aligned center aligned grid top-form">
+  <div class="column">
+    <div class="ui large form">
+      <%= form_for @book, html: { multipart: true } do |f| %>
+        <div class="ui stacked segment">
+          <% if not @book.nil? and @book.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@book.errors.count, "error") %>
+                Erro ao salvar livro:
+              </h2>
+              <ul>
+                <% @book.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="field">
+            <%= f.file_field :picture %>
+            <% if f.object.picture? %>
+              <%= image_tag f.object.picture.thumb.url %>
+            <% end %>
+          </div>
+        	<div class="field">
+        		<%= f.text_field :title, autofocus: true, placeholder: 'Title' %>
+        	</div>
+        	<div class="field">
+        		<%= f.text_field :author, placeholder: 'Author' %>
+        	</div>
+        	<div class="field">
+        		<%= f.text_field :isbn, placeholder: 'ISBN' %>
+        	</div>
+        	<div class="field">
+        		<%= f.text_area :description, placeholder: 'Description' %>
+        	</div>
+    	    <%= f.submit 'Save', class: 'ui fluid large teal submit button' %>
+          <%= link_to 'Back', books_path, class: 'ui link' %>
         <% end %>
-      </ul>
+      </div>
     </div>
-  <% end %>
-  <div class="form-group">
-    <%= f.file_field :picture %>
-    <% if f.object.picture? %>
-      <%= image_tag f.object.picture.thumb.url %>
-    <% end %>
   </div>
-
-	<div class="form-group">
-		<%= f.label :title, 'Título' %>
-		<%= f.text_field :title, autofocus: true, class:"form-control" %>
-	</div>
-
-	<div class="form-group">
-		<%= f.label :author, 'Autor' %>
-		<%= f.text_field :author, class:"form-control" %>
-	</div>
-
-	<div class="form-group">
-		<%= f.label :isbn, 'ISBN' %>
-		<%= f.text_field :isbn, class:"form-control" %>
-	</div>
-
-	<div class="form-group">
-		<%= f.label :description, 'Descrição do livro' %>
-		<%= f.text_area :description, class:"form-control" %>
-	</div>
-
-  <div class="row">
-    <div class="col-md-6">
-  	    <%= f.submit 'Cadastrar', class:'btn btn-success btn-block' %>
-    </div>
-    <div class="col-md-6">
-      <%= link_to 'Voltar', books_path, class:'btn btn-default btn-block' %>
-  	</div>
-  </div>
-<% end %>
+</div>
