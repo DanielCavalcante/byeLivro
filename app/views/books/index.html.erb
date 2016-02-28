@@ -1,9 +1,29 @@
-<%= link_to 'Novo livro', new_book_path, class: 'btn btn-link' %>
-<% @books.each do |book| %>
-  <%= image_tag book.picture.thumb.url %>
-  <h5><%= book.title %></h5>
-  <p>Autor: <%= book.author %></p>
-  <p>ISBN: <%= book.isbn %>
-  <%= link_to 'Editar', edit_book_path(book), class:"btn btn-primary" %>
-  <%= link_to 'Remover', book_path(book), method: :delete, class:"btn btn-danger" %>
-<% end %>
+<div class="list-item">
+  <div class="bottom-link">
+    <%= link_to 'Novo livro', new_book_path %>
+  </div>
+  <div class="ui cards">
+    <% @books.each do |book| %>
+      <div class="column card">
+        <div class="content">
+          <%= image_tag book.picture.thumb.url, class: 'right floated mini ui image' %>
+          <div class="header">
+            <%= book.title %>
+          </div>
+          <div class="meta">
+            <%= book.author %>
+          </div>
+          <div class="description">
+            <%= book.isbn %>
+          </div>
+        </div>
+        <div class="extra content">
+          <div class="ui two buttons">
+            <%= link_to 'Editar', edit_book_path(book), class: 'ui basic blue button' %>
+            <%= link_to 'Remover', book_path(book), method: :delete, class: 'ui basic red button' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
