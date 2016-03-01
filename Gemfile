@@ -15,6 +15,7 @@ gem 'semantic-ui-sass'
 gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
 gem 'rails-i18n'
+gem 'kaminari'
 
 group :development, :test do
   gem 'pry-meta'

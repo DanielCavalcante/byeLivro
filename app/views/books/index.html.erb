@@ -4,17 +4,17 @@
   </div>
   <div class="ui cards">
     <% @books.each do |book| %>
-      <div class="column card">
+      <div class="ui card">
+        <div class="image">
+            <%= image_tag book.picture.thumb.url %>
+        </div>
         <div class="content">
-          <%= image_tag book.picture.thumb.url, class: 'right floated mini ui image' %>
-          <div class="header">
-            <%= book.title %>
-          </div>
+          <a class="header"><%= book.title %></a>
           <div class="meta">
-            <%= book.author %>
+            <span class="date"><%= book.isbn %></span>
           </div>
           <div class="description">
-            <%= book.isbn %>
+            <%= book.author %>
           </div>
         </div>
         <div class="extra content">
@@ -25,5 +25,9 @@
         </div>
       </div>
     <% end %>
+  </div>
+  <div class="top">
+    <%= paginate @books %>
+    <%= page_entries_info @books %>
   </div>
 </div>
