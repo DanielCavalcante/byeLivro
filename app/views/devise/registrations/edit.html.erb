@@ -4,7 +4,8 @@
       <div class="content">Edit <%= resource_name.to_s.humanize %></div>
     </h2>
     <div class="ui large form">
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= form_for(resource, as: resource_name,
+        url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <div class="ui stacked segment">
           <div class="field">
             <%= f.file_field :picture %>
@@ -50,7 +51,8 @@
           <div class="field">
             <div class="ui left icon input">
               <i class="lock icon"></i>
-              <%= f.password_field :current_password, autocomplete: "off" %>
+              <%= f.password_field :current_password, autocomplete: "off",
+                placeholder: 'Current Password' %>
             </div>
           </div>
           <%= f.submit "Update", class: 'ui fluid large teal submit button' %>

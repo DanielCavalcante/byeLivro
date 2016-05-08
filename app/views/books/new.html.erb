@@ -1,5 +1,7 @@
-<div class="col-md-6 centered">
-  <h3><%= 'Cadastrar novo livro' %></h3>
-	<p><%= 'Preencha os campos para salvar seu livro.' %></p>
-  <%= render 'form', book: @book, url: new_book_path(@book) %>
+<div class="center">
+  <h2 class="ui teal image header">
+    <div class="content">New book</div>
+  </h2>
+  <p><%= 'Preencha os campos para salvar seu livro.' %></p>
 </div>
+<%= render 'form', book: @book, url: new_book_path(@book) %>
