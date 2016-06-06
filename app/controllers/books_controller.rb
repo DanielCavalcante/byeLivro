@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
 
   def index
-    @books = Book.page(params[:page]).per(8)
+    @books = current_user.books.page(params[:page]).per(8)
   end
 
   def show
