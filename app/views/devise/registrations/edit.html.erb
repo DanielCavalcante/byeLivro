@@ -57,7 +57,7 @@
                 placeholder: 'Current Password' %>
             </div>
           </div>
-          <%= f.submit "Update", class: 'ui fluid large teal submit button' %>
+          <%= f.submit t('actions.update'), class: 'ui fluid large teal submit button' %>
         </div>
         <div class="ui error message">
           <%= devise_error_messages! %>
@@ -66,7 +66,7 @@
     </div>
     <div class="ui message">
       <h3>Cancel my account</h3>
-      <%= button_to "Cancel my account", registration_path(resource_name),
+      <%= button_to t('actions.cancel_my_account'), registration_path(resource_name),
         data: { confirm: "Are you sure?" }, method: :delete,
         class: 'ui fluid large red submit button' %>
     </div>
