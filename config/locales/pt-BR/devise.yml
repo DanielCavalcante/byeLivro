@@ -1,0 +1,10 @@
+pt-BR:
+  devise:
+    sessions:
+      user:
+        signed_out: 'Logout realizado com sucesso!'
+        signed_in: 'Login realizado com sucesso!'
+
+    registrations:
+      user:
+        updated: 'Usuário atualizado!'
