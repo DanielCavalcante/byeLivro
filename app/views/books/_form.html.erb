@@ -35,8 +35,8 @@
         	<div class="field">
         		<%= f.text_area :description, placeholder: 'Description' %>
         	</div>
-    	    <%= f.submit 'Save', class: 'ui fluid large teal submit button' %>
-          <%= link_to 'Back', books_path, class: 'ui link' %>
+    	    <%= f.submit t('actions.save'), class: 'ui fluid large teal submit button' %>
+          <%= link_to t('actions.back'), books_path, class: 'ui link' %>
         <% end %>
       </div>
     </div>

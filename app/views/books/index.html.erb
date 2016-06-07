@@ -1,6 +1,6 @@
 <div class="list-item">
   <div class="bottom-link">
-    <%= link_to 'Novo livro', new_book_path %>
+    <%= link_to t('actions.new'), new_book_path %>
   </div>
   <div class="ui cards">
     <% @books.each do |book| %>
@@ -19,8 +19,8 @@
         </div>
         <div class="extra content">
           <div class="ui two buttons">
-            <%= link_to 'Editar', edit_book_path(book), class: 'ui basic blue button' %>
-            <%= link_to 'Remover', book_path(book), method: :delete, class: 'ui basic red button' %>
+            <%= link_to t('actions.edit'), edit_book_path(book), class: 'ui basic blue button' %>
+            <%= link_to t('actions.remove'), book_path(book), method: :delete, class: 'ui basic red button' %>
           </div>
         </div>
       </div>
